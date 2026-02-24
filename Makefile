@@ -4,5 +4,6 @@ hello: hello.o
 hello.o: hello.s
 	as -o hello.o hello.s
 
-fast: hello.o
-	make hello.o && make hello && ./hello
+.PHONY: fast
+fast: hello
+	./hello
